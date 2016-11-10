@@ -5,6 +5,12 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     @base_title = "SocMedWebApp"
   end
 
+  test "root should point to static_pages#home action" do
+    get root_url
+    assert_response :success
+    assert_select "title", "Home | #{@base_title}"
+  end
+
   test "should get home" do
     get static_pages_home_url
     assert_response :success
