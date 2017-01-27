@@ -9,3 +9,13 @@ two:
   email: email2@test.com
   name: MyString
   password_digest: $2a$04$iok6VmX7bMP.SYMrGPE3feVDfYDFaVPO8tAzRkLjIEzjFbObEcvuK
+
+michael:
+  name: Michael Example
+  email: michael@example.com
+  password_digest: <%= User.digest('password') %>
+
+railstutorial:
+  name: Rails Tutorial
+  email: example@railstutorial.org
+  password_digest: <%= User.digest('password') %>
