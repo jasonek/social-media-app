@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    user_params.each {|x,y| y.downcase!}
     @user = User.new(user_params)    # Not the final implementation!
      if @user.save
        flash[:success] = "Welcome to the Sample App!"
